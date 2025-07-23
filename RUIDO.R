@@ -146,8 +146,7 @@ ggplot(data = ruido,aes(y = Tiempo,colour = tratamiento))+
   theme_minimal()
 #------------------------------------------------------------------------------#
 ### Modelo ###
-
-lm.ruido <- lm(Tiempo~Ruido*Dificultad+Facultad+Edad+Sexo+Conocimiento+veces,
+lm.ruido <- lm(Tiempo~Facultad+Ruido*Dificultad+Edad+Sexo+Conocimiento+veces,
                data = ruido,contrasts = list(Ruido="contr.sum",
                                              Dificultad="contr.sum",
                                              Facultad="contr.sum"))
